@@ -16,15 +16,23 @@ const start = () => {
         clearInterval(idI);
     }
 }
-const timer = ()=>{
-    if(active = true){
+const timer = () => {
+    if (active = true) {
         time++;
     }
-    panel.textContent = (time/100).toFixed(2);
+    panel.textContent = (time / 100).toFixed(2);
+}
+
+const reset = () => {
+    time = 0;
+    panel.textContent = '---';
+    active = false;
+    btnMain.textContent = 'Start';
+    clearInterval(idI);
 }
 
 
 
 
-
 btnMain.addEventListener('click', start);
+btnReset.addEventListener('click', reset)
